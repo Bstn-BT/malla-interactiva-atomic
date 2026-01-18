@@ -86,7 +86,7 @@ export const MusicPlayer = ({ tracks }) => {
         {/* CABECERA (Click para expandir/contraer) */}
         <div 
           onClick={() => setIsExpanded(!isExpanded)}
-          className="bg-gradient-to-r from-blood-900 to-black p-3 flex justify-between items-center cursor-pointer border-b border-blood-800"
+          className="bg-gradient-to-r from-blood-900 to-black p-3 flex justify-between items-center cursor-pointer border-b border-blood-800 "
         >
           <div className="flex items-center gap-2">
              {/* Icono animado del header */}
@@ -97,7 +97,7 @@ export const MusicPlayer = ({ tracks }) => {
             />
             <span className="text-white font-cinzel font-semibold text-sm tracking-widest">MUSIC PLAYER</span>
           </div>
-          <button className="text-gray-400 hover:text-white">
+          <button className="text-gray-400 hover:text-white cursor-pointer">
             {isExpanded ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
           </button>
         </div>
@@ -107,7 +107,7 @@ export const MusicPlayer = ({ tracks }) => {
           <div className="p-5 bg-[url('https://www.transparenttextures.com/patterns/black-paper.png')]">
             
             {/* --- SECCIÓN DEL VINILO (Tu código integrado) --- */}
-            <div className="recordPlayer mb-4">
+            <div className="recordPlayer mb-4 transition-transform duration-300 hover:scale-110">
               {/* El Vinilo: gira si musicPlaying es true */}
               <img 
                 className={`vinyl ${!musicPlaying ? 'paused-spin' : ''}`} 
@@ -131,18 +131,18 @@ export const MusicPlayer = ({ tracks }) => {
 
             {/* Controles Expandidos */}
             <div className="flex justify-center items-center gap-6 mb-4">
-              <button onClick={() => changeTrack('prev')} className="text-gray-400 hover:text-white hover:scale-110 transition-transform">
+              <button onClick={() => changeTrack('prev')} className="text-gray-400 hover:text-white hover:scale-110 transition-transform cursor-pointer">
                 <SkipBack size={24} />
               </button>
               
               <button 
                 onClick={toggleMusic} 
-                className="w-12 h-12 rounded-full bg-blood-800 flex items-center justify-center text-white border-2 border-blood-600 hover:bg-blood-700 hover:scale-105 transition-all shadow-[0_0_15px_rgba(139,0,0,0.6)]"
+                className="w-12 h-12 rounded-full bg-blood-800 flex items-center justify-center text-white border-2 border-blood-600 hover:bg-blood-700 hover:scale-105 transition-all shadow-[0_0_15px_rgba(139,0,0,0.6)] cursor-pointer"
               >
                 {musicPlaying ? <Pause size={24} /> : <Play size={24} ml={1} />}
               </button>
               
-              <button onClick={() => changeTrack('next')} className="text-gray-400 hover:text-white hover:scale-110 transition-transform">
+              <button onClick={() => changeTrack('next')} className="text-gray-400 hover:text-white hover:scale-110 transition-transform cursor-pointer">
                 <SkipForward size={24} />
               </button>
             </div>
@@ -155,7 +155,50 @@ export const MusicPlayer = ({ tracks }) => {
                 min="0" max="100" 
                 value={volume}
                 onChange={handleVolumeChange}
-                className="w-full h-1 bg-gray-800 rounded-lg appearance-none cursor-pointer [&::-webkit-slider-thumb]:appearance-none [&::-webkit-slider-thumb]:w-3 [&::-webkit-slider-thumb]:h-3 [&::-webkit-slider-thumb]:bg-blood-600 [&::-webkit-slider-thumb]:rounded-full"
+                style={{
+                  background: `linear-gradient(to right, #b22222 ${volume}%, #374151 ${volume}%)`
+                }}
+                className="
+                  w-full h-[2px] rounded-full appearance-none cursor-pointer outline-none
+
+                  /* --- CHROME / SAFARI / EDGE --- */
+                  [&::-webkit-slider-thumb]:appearance-none 
+                  [&::-webkit-slider-thumb]:w-3 
+                  [&::-webkit-slider-thumb]:h-3 
+
+                  /* FONDO: Degradado rojo */
+                  [&::-webkit-slider-thumb]:bg-gradient-to-br 
+                 [&::-webkit-slider-thumb]:from-red-500 
+                 [&::-webkit-slider-thumb]:to-blood-900
+
+                  /* BORDE: Blanco alrededor del rojo */
+                 [&::-webkit-slider-thumb]:border-white
+                  [&::-webkit-slider-thumb]:border-2
+
+                  [&::-webkit-slider-thumb]:rounded-full 
+                  [&::-webkit-slider-thumb]:shadow-[0_0_4px_rgba(0,0,0,0.5)] 
+                  [&::-webkit-slider-thumb]:transition-transform 
+                  hover:[&::-webkit-slider-thumb]:scale-125
+
+                  /* --- FIREFOX (Crucial para que no se vea cuadrado ahí) --- */
+                  [&::-moz-range-thumb]:w-3 
+                  [&::-moz-range-thumb]:h-3 
+
+                  /* FONDO: Degradado rojo */
+                  [&::-webkit-slider-thumb]:bg-gradient-to-br 
+                 [&::-webkit-slider-thumb]:from-red-500 
+                 [&::-webkit-slider-thumb]:to-blood-900
+
+                  /* BORDE: Blanco alrededor del rojo */
+                  [&::-webkit-slider-thumb]:border-white
+                  [&::-webkit-slider-thumb]:border-2
+
+                  [&::-moz-range-thumb]:border-none 
+                  [&::-moz-range-thumb]:rounded-full 
+                  [&::-moz-range-thumb]:shadow-[0_0_4px_rgba(0,0,0,0.5)]
+                  [&::-moz-range-thumb]:transition-transform 
+                  hover:[&::-moz-range-thumb]:scale-125
+                "
               />
             </div>
           </div>
@@ -165,7 +208,7 @@ export const MusicPlayer = ({ tracks }) => {
         {!isExpanded && (
           <div className="p-3 flex items-center justify-between bg-black/50">
             <div className="flex items-center gap-3 overflow-hidden">
-              <img src={track.image} alt="cover" className="w-10 h-10 rounded border border-blood-900 object-cover" />
+              <img src={track.image} alt="cover" className="w-10 h-10 rounded border border-blood-900 object-cover transition-transform duration-300 hover:scale-110" />
               <div className="flex flex-col overflow-hidden">
                 <span className="text-white text-xs font-bold truncate w-32">{track.title}</span>
                 <span className="text-gray-500 text-[10px] truncate">{track.artist}</span>
@@ -173,13 +216,13 @@ export const MusicPlayer = ({ tracks }) => {
             </div>
             
             <div className="flex items-center gap-2">
-              <button onClick={() => changeTrack('prev')} className="text-gray-400 hover:text-white">
+              <button onClick={() => changeTrack('prev')} className="text-gray-400 hover:text-white cursor-pointer">
                 <SkipBack size={16} />
               </button>
-              <button onClick={toggleMusic} className="text-white hover:text-blood-500">
+              <button onClick={toggleMusic} className="text-white hover:text-blood-500 cursor-pointer">
                 {musicPlaying ? <Pause size={20} /> : <Play size={20} />}
               </button>
-              <button onClick={() => changeTrack('next')} className="text-gray-400 hover:text-white">
+              <button onClick={() => changeTrack('next')} className="text-gray-400 hover:text-white cursor-pointer">
                 <SkipForward size={16} />
               </button>
             </div>
