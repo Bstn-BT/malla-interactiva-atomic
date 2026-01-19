@@ -14,7 +14,7 @@ export const BatRain = () => {
   ];
 
   return (
-    <div className="fixed inset-0 pointer-events-none z-[1000] overflow-hidden">
+    <div className="fixed inset-0 pointer-events-none z-1000 overflow-hidden">
       {config.map((item, i) => (
         <div 
           key={i} 

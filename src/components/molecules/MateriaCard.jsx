@@ -31,7 +31,7 @@ export const MateriaCard = ({ materia, onClick }) => {
       onClick={() => !isBloqueado && onClick(materia.id)}
       className={cardClasses}
     >
-      <div className="flex-shrink-0">
+      <div className="shrink-0">
         {/* APLICACIÓN DEL CAMBIO: 
             Pasamos isPaused={isBloqueado} para que se detenga si está bloqueada.
             Mantenemos isCompletada para tu animación de finalización. 
@@ -46,7 +46,7 @@ export const MateriaCard = ({ materia, onClick }) => {
         {materia.nombre}
       </span>
       
-      <div className="ml-auto flex-shrink-0">
+      <div className="ml-auto shrink-0">
         <StatusIcon estado={materia.estado} />
       </div>
     </div>

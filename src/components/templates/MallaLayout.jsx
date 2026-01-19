@@ -11,12 +11,12 @@ export const MallaLayout = ({ children, musicPlayer }) => {
          <img 
              src="../../../public/gif/calavera.webp" 
              alt="Skull Background" 
-             className="w-auto h-[400px] object-contain"
+             className="w-auto h-100 object-contain"
          />
       </div>
       
-      <header className="mb-[30px] relative inline-block px-[30px] py-0 border-b-[3px] border-blood-850 rounded-[10px]
-        bg-gradient-to-r from-transparent via-[rgba(139,0,0,0.2)] via-50% to-transparent overflow-hidden">
+      <header className="mb-7.5 relative inline-block px-7.5 py-0 border-b-[3px] border-blood-850 rounded-[10px]
+        bg-linear-to-r from-transparent via-[rgba(139,0,0,0.2)] via-50% to-transparent overflow-hidden">
         
         {/* Efecto de sangre animada en el header */}
         <div 

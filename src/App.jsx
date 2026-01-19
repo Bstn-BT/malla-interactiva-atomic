@@ -18,7 +18,7 @@ function App() {
             
             {/* 1. BARRA LICENCIADO: Se inserta antes del Semestre 1 */}
             {num === 1 && (
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <VerticalBar 
                   text="LICENCIADO(A) EN ANIMACIÓN DIGITAL" 
                   isTitle={true} 
@@ -28,7 +28,7 @@ function App() {
 
             {/* 2. BARRA TÍTULO: Se inserta antes del Semestre 9 (Entre 8 y 9) */}
             {num === 9 && (
-              <div className="flex-shrink-0">
+              <div className="shrink-0">
                 <VerticalBar 
                   text="TÍTULO PROFESIONAL: REALIZADOR(A) EN CINE-ANIMACIÓN" 
                   isTitle={true} 

@@ -8,7 +8,7 @@ export const SpiralIcon = ({ isPaused = false, isCompletada = false }) => {
       /* CAMBIO CLAVE: Si está pausado usa la imagen estática, si no, el GIF */
       src={isPaused ? "/gif/spiral-icon.png" : "/gif/spiral.webp"} 
       alt="spiral"
-      className={`w-5 h-5 flex-shrink-0 transition-all duration-500
+      className={`w-5 h-5 shrink-0 transition-all duration-500
         ${isCompletada 
           ? 'animate-spiral-complete' 
           : isPaused

@@ -70,8 +70,8 @@ export const MusicPlayer = ({ tracks }) => {
 
   return (
     <div className={`
-      fixed bottom-5 right-5 z-[1000] transition-all duration-300 font-cinzel
-      ${isExpanded ? 'w-[350px]' : 'w-[300px]'}
+      fixed bottom-5 right-5 z-1000 transition-all duration-300 font-cinzel
+      ${isExpanded ? 'w-87.5' : 'w-75'}
     `}>
       {/* Iframe Oculto */}
       <iframe
@@ -86,14 +86,14 @@ export const MusicPlayer = ({ tracks }) => {
         {/* CABECERA (Click para expandir/contraer) */}
         <div 
           onClick={() => setIsExpanded(!isExpanded)}
-          className="bg-gradient-to-r from-blood-900 to-black p-3 flex justify-between items-center cursor-pointer border-b border-blood-800 "
+          className="bg-linear-to-r from-blood-900 to-black p-3 flex justify-between items-center cursor-pointer border-b border-blood-800 "
         >
           <div className="flex items-center gap-2">
              {/* Icono animado del header */}
             <img 
               src="/images/logo-music.png" 
               alt="icon" 
-              className={`w-6 h-6 filter sepia saturate-200 hue-rotate-[320deg] ${musicPlaying ? 'animate-pulse' : ''}`}
+              className={`w-6 h-6 filter sepia saturate-200 hue-rotate-320 ${musicPlaying ? 'animate-pulse' : ''}`}
             />
             <span className="text-white font-dotgothic16 font-semibold text-sm tracking-widest">MUSIC PLAYER</span>
           </div>
@@ -159,15 +159,14 @@ export const MusicPlayer = ({ tracks }) => {
                   background: `linear-gradient(to right, #b22222 ${volume}%, #374151 ${volume}%)`
                 }}
                 className="
-                  w-full h-[2px] rounded-full appearance-none cursor-pointer outline-none
+                  w-full h-0.5 rounded-full appearance-none cursor-pointer outline-none
 
                   /* --- CHROME / SAFARI / EDGE --- */
                   [&::-webkit-slider-thumb]:appearance-none 
                   [&::-webkit-slider-thumb]:w-3 
                   [&::-webkit-slider-thumb]:h-3 
 
-                  /* FONDO: Degradado rojo */
-                  [&::-webkit-slider-thumb]:bg-gradient-to-br 
+                  /* FONDO: Degradado rojo */ 
                  [&::-webkit-slider-thumb]:from-red-500 
                  [&::-webkit-slider-thumb]:to-blood-900
 
@@ -185,13 +184,9 @@ export const MusicPlayer = ({ tracks }) => {
                   [&::-moz-range-thumb]:h-3 
 
                   /* FONDO: Degradado rojo */
-                  [&::-webkit-slider-thumb]:bg-gradient-to-br 
-                 [&::-webkit-slider-thumb]:from-red-500 
-                 [&::-webkit-slider-thumb]:to-blood-900
+                  [&::-webkit-slider-thumb]:bg-linear-to-br
 
                   /* BORDE: Blanco alrededor del rojo */
-                  [&::-webkit-slider-thumb]:border-white
-                  [&::-webkit-slider-thumb]:border-2
 
                   [&::-moz-range-thumb]:border-none 
                   [&::-moz-range-thumb]:rounded-full 
