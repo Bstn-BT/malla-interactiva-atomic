@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, memo } from 'react';
 import { Play, Pause, SkipBack, SkipForward, Volume2, Maximize2, Minimize2 } from 'lucide-react';
 
-export const MusicPlayer = ({ tracks }) => {
+export const MusicPlayer = memo(({ tracks }) => {
   const [musicPlaying, setMusicPlaying] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(0);
   const [volume, setVolume] = useState(50);
@@ -226,4 +226,4 @@ export const MusicPlayer = ({ tracks }) => {
       </div>
     </div>
   );
-};
+});

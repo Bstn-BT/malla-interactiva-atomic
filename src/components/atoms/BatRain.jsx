@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export const BatRain = () => {
+export const BatRain = memo(() => {
   // Posiciones y delays extraídos manualmente de tu CSS (.snowflake:nth-child...)
   const config = [
     { left: '1%', delay: '0s, 0s' },
@@ -18,7 +18,7 @@ export const BatRain = () => {
       {config.map((item, i) => (
         <div 
           key={i} 
-          className="absolute -top-[10%] animate-snowflakes-fall"
+          className="absolute -top-[10%] animate-snowflakes-fall will-change-transform"
           style={{ 
             left: item.left, 
             animationDelay: item.delay.split(',')[0], // Delay de caída
@@ -33,7 +33,7 @@ export const BatRain = () => {
             }}
           >
             <img 
-              src="../../../public/gif/bat.webp" 
+              src="/gif/bat.webp" 
               className="w-10 opacity-80 filter-bat-red" // Usamos la clase filter exacta
               alt="bat" 
             />
@@ -42,4 +42,4 @@ export const BatRain = () => {
       ))}
     </div>
   );
-};
+});

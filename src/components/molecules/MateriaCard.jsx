@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { memo } from 'react';
 import { SpiralIcon } from '../atoms/SpiralIcon';
 import { StatusIcon } from '../atoms/StatusIcon';
 
-export const MateriaCard = ({ materia, onClick }) => {
+const MateriaCardComponent = ({ materia, onClick }) => {
   const isBloqueado = materia.estado === 'bloqueado';
   const isCompletada = materia.estado === 'completada';
   const isDisponible = materia.estado === 'disponible';
@@ -52,3 +52,9 @@ export const MateriaCard = ({ materia, onClick }) => {
     </div>
   );
 };
+
+export const MateriaCard = memo(MateriaCardComponent, (prevProps, nextProps) => {
+  // Solo re-renderiza si el estado de la materia cambia
+  return prevProps.materia.estado === nextProps.materia.estado &&
+         prevProps.materia.nombre === nextProps.materia.nombre;
+});

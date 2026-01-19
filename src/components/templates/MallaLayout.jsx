@@ -9,7 +9,7 @@ export const MallaLayout = ({ children, musicPlayer }) => {
       {/* FONDO CALAVERA LLAMEANTE */}
       <div className="fixed left-5 top-5 -translate-y-1/2 z-0 pointer-events-none opacity-60 filter contrast-125">
          <img 
-             src="../../../public/gif/calavera.webp" 
+             src="/gif/calavera.webp" 
              alt="Skull Background" 
              className="w-auto h-100 object-contain"
          />
@@ -21,7 +21,7 @@ export const MallaLayout = ({ children, musicPlayer }) => {
         {/* Efecto de sangre animada en el header */}
         <div 
           style={{
-            backgroundImage: 'url("../../../public/gif/borde-sangre.webp")',
+            backgroundImage: 'url("/gif/borde-sangre.webp")',
             backgroundPosition: 'center top',
             backgroundRepeat: 'repeat-x',
           }}
@@ -30,7 +30,7 @@ export const MallaLayout = ({ children, musicPlayer }) => {
         {/* Efecto de sangre animada en el header (parte superior, invertida) */}
         <div 
           style={{
-            backgroundImage: 'url("../../../public/gif/borde-sangre.webp")',
+            backgroundImage: 'url("/gif/borde-sangre.webp")',
             backgroundPosition: 'center top',
             backgroundRepeat: 'repeat-x',
           }}

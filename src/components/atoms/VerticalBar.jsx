@@ -1,6 +1,6 @@
-import React from 'react';
+import React, { memo } from 'react';
 
-export const VerticalBar = ({ text, isTitle = false }) => {
+export const VerticalBar = memo(({ text, isTitle = false }) => {
   return (
     <div 
       className={`
@@ -23,4 +23,4 @@ export const VerticalBar = ({ text, isTitle = false }) => {
       {text}
     </div>
   );
-};
+});

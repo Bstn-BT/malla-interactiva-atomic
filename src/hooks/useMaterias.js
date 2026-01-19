@@ -1,11 +1,11 @@
-import { useState, useEffect } from 'react';
+import { useState, useCallback } from 'react';
 import { DATA_MATERIAS } from '../data/materias';
 
 export const useMaterias = () => {
   // Inicializamos el estado directamente con la data
   const [materias, setMaterias] = useState(DATA_MATERIAS);
 
-  const completarMateria = (id) => {
+  const completarMateria = useCallback((id) => {
     setMaterias(prevMaterias => {
       // 1. Encontramos la materia que se tocó
       const materiaTarget = prevMaterias.find(m => m.id === id);
@@ -88,7 +88,7 @@ export const useMaterias = () => {
 
       return nuevasMaterias;
     });
-  };
+  }, []); // useCallback para evitar recrear la función
 
   return { materias, completarMateria };
 };

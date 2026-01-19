@@ -1,11 +1,11 @@
-import React from 'react';
+import React, { memo } from 'react';
 
 // isPaused: la materia está bloqueada
 // isCompletada: la materia ya fue aprobada
-export const SpiralIcon = ({ isPaused = false, isCompletada = false }) => {
+export const SpiralIcon = memo(({ isPaused = false, isCompletada = false }) => {
   return (
     <img 
-      /* CAMBIO CLAVE: Si está pausado usa la imagen estática, si no, el GIF */
+      /* Si está la asignatura bloqueada usa la imagen estática, si no, el GIF */
       src={isPaused ? "/gif/spiral-icon.png" : "/gif/spiral.webp"} 
       alt="spiral"
       className={`w-5 h-5 shrink-0 transition-all duration-500
@@ -22,4 +22,4 @@ export const SpiralIcon = ({ isPaused = false, isCompletada = false }) => {
       }}
     />
   );
-};
+});
