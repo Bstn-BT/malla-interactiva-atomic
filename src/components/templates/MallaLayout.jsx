@@ -15,7 +15,7 @@ export const MallaLayout = ({ children, musicPlayer }) => {
          />
       </div>
       
-      <header className="mb-7.5 relative inline-block px-7.5 py-0 border-b-[3px] border-blood-850 rounded-[10px]
+      <header className="mb-7.5 relative inline-block px-7.5 py-0 rounded-[10px]
         bg-linear-to-r from-transparent via-[rgba(139,0,0,0.2)] via-50% to-transparent overflow-hidden">
         
         {/* Efecto de sangre animada en el header */}
@@ -38,7 +38,7 @@ export const MallaLayout = ({ children, musicPlayer }) => {
         />
 
         {/* TÍTULO PRINCIPAL */}
-        <h1 className="text-[2.5rem] font-bold tracking-[3px] text-white font-cinzel relative z-20">
+        <h1 className="text-[2.5rem] font-bold tracking-[3px] text-shadow-zinc-400 font-cinzel relative z-20">
           ANIMACIÓN DIGITAL
         </h1>
         
