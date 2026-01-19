@@ -89,6 +89,6 @@ export const TRACKS = [
     title: 'Demons Sing Love Songs', 
     artist: 'Unwound', 
     duration: '4:03', 
-    image: '/covers/demons.jpg' 
+    image: '/covers/demon.jpg' 
   }
 ];

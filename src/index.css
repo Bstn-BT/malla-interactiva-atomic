@@ -22,6 +22,7 @@
 
   --font-cinzel: "Cinzel", serif;
   --font-gothic: "UnifrakturMaguntia", cursive;
+  --font-dotgothic16: 'DotGothic16', sans-serif;
 
   /* --- ANIMACIONES EXACTAS --- */
   --animate-snowflakes-fall: snowflakes-fall 10s linear infinite;
@@ -140,4 +141,31 @@
 /* Clase de utilidad para pausar el giro */
 .paused-spin {
   animation-play-state: paused !important;
+}
+
+/* Optimización de GPU para animaciones suaves */
+.optimize-gpu {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Añade esto al final de tu archivo index.css */
+.bat-container *, 
+.vinyl, 
+.vinylCover,
+[class*="animate-"] {
+  /* Fuerza el renderizado por GPU */
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
+  will-change: transform;
+}
+
+/* Optimiza el scroll de la malla */
+.custom-scrollbar {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+  overscroll-behavior-x: contain;
 }

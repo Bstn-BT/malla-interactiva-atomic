@@ -95,7 +95,7 @@ export const MusicPlayer = ({ tracks }) => {
               alt="icon" 
               className={`w-6 h-6 filter sepia saturate-200 hue-rotate-[320deg] ${musicPlaying ? 'animate-pulse' : ''}`}
             />
-            <span className="text-white font-cinzel font-semibold text-sm tracking-widest">MUSIC PLAYER</span>
+            <span className="text-white font-dotgothic16 font-semibold text-sm tracking-widest">MUSIC PLAYER</span>
           </div>
           <button className="text-gray-400 hover:text-white cursor-pointer">
             {isExpanded ? <Minimize2 size={16} /> : <Maximize2 size={16} />}
@@ -125,8 +125,8 @@ export const MusicPlayer = ({ tracks }) => {
             {/* ----------------------------------------------- */}
 
             <div className="text-center mb-4 space-y-1">
-              <h3 className="text-white font-bold text-lg truncate drop-shadow-md">{track.title}</h3>
-              <p className="text-blood-700 text-sm italic">{track.artist}</p>
+              <h3 className="text-white font-dotgothic16 font-bold text-lg truncate drop-shadow-md ">{track.title}</h3>
+              <p className="text-blood-700 text-sm italic font-dotgothic16">{track.artist}</p>
             </div>
 
             {/* Controles Expandidos */}
@@ -172,7 +172,7 @@ export const MusicPlayer = ({ tracks }) => {
                  [&::-webkit-slider-thumb]:to-blood-900
 
                   /* BORDE: Blanco alrededor del rojo */
-                 [&::-webkit-slider-thumb]:border-white
+                [&::-webkit-slider-thumb]:border-white
                   [&::-webkit-slider-thumb]:border-2
 
                   [&::-webkit-slider-thumb]:rounded-full 
@@ -210,8 +210,8 @@ export const MusicPlayer = ({ tracks }) => {
             <div className="flex items-center gap-3 overflow-hidden">
               <img src={track.image} alt="cover" className="w-10 h-10 rounded border border-blood-900 object-cover transition-transform duration-300 hover:scale-110" />
               <div className="flex flex-col overflow-hidden">
-                <span className="text-white text-xs font-bold truncate w-32">{track.title}</span>
-                <span className="text-gray-500 text-[10px] truncate">{track.artist}</span>
+                <span className="text-white text-xs font-dotgothic16 font-bold truncate w-32">{track.title}</span>
+                <span className="text-gray-500 text-[10px] truncate font-dotgothic16">{track.artist}</span>
               </div>
             </div>
             

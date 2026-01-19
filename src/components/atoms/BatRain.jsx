@@ -33,7 +33,7 @@ export const BatRain = () => {
             }}
           >
             <img 
-              src="https://media.tenor.com/fU-lYcf2_UQAAAAi/bat.gif" 
+              src="../../../public/gif/bat.webp" 
               className="w-10 opacity-80 filter-bat-red" // Usamos la clase filter exacta
               alt="bat" 
             />
