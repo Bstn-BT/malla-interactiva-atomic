@@ -62,13 +62,13 @@
     100% { transform: scale(1); filter: brightness(0) invert(0.1) sepia(1) saturate(5000%) hue-rotate(340deg) brightness(0.8) drop-shadow(0 0 2px rgba(139, 0, 0, 0.4)); opacity: 1; }
   }
 }
-
+/* --- ESTILOS FONDO --- */
 @layer base {
   body {
     @apply bg-bg-dark text-[#d0d0d0] min-h-screen relative overflow-x-hidden;
     background-image: 
       url('https://www.transparenttextures.com/patterns/black-paper.png'),
-      linear-gradient(135deg, #0a0a0a 0%, #1a0a0a 100%);
+      linear-gradient(135deg, #2c0202 0%, #c91616 100%);
     background-blend-mode: overlay;
   }
 
