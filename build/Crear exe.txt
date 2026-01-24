@@ -1,0 +1,2 @@
+Comando para crear el .exe
+py -3.12 -m PyInstaller --onefile --windowed --name "MallaInteractiva" --add-data "dist;dist" app.py
