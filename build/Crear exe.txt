@@ -1,2 +1,7 @@
 Comando para crear el .exe
+
+1.
+npm run build
+
+2.
 py -3.12 -m PyInstaller --onefile --windowed --name "MallaInteractiva" --add-data "dist;dist" app.py
